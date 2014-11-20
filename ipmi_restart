@@ -1,0 +1,37 @@
+
+#!/bin/bash
+
+echo "arguments section begin"
+echo "0 is $0"
+echo "@ is $@"
+echo "# is $#"
+echo "arguments section end"
+
+if [ $# == 1 ] #&& [ $1 = "help" ]
+then
+ if [ $1 = "help" ]
+ then
+  echo "ireset -d -N ddd.ddd.ddd.ddd -U ADMIN -P ADMIN"
+  echo "sleep 10"
+  echo "ireset -u -N ddd.ddd.ddd.ddd -U ADMIN -P ADMIN"
+ elif [ $1 = "HELP" ]
+ then
+  echo "this script reboots super1, but first prints arguments "
+  echo "arguments are :"
+  echo " -d -> remote system down"
+  echo " -u -> remote system up"
+  echo " -N -> remote system nodename, which in our case is IP (ipmi interface)"
+  echo " -U -> remote system username"
+  echo " -P -> remote system password" 
+ else
+  echo "bad argument"
+ fi
+elif [ $# == 0 ] 
+then
+ ireset -d -N ddd.ddd.ddd.ddd -U ADMIN -P ADMIN
+ sleep 10
+ ireset -u -N ddd.ddd.ddd.ddd -U ADMIN -P ADMIN
+else
+ echo "runs only if no params or \"help\" param"
+fi
+
