@@ -35,3 +35,4 @@ else
  echo "runs only if no params or \"help\" param"
 fi
 
+#now local copy is working on super1
