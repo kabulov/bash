@@ -17,6 +17,8 @@ export PATH
 
 # User specific aliases and functions
 alias ll="ls -l"
+# Install from https://github.com/ranger/ranger
+alias ranger="python3 /home/kozim_kabulov/ranger/ranger/ranger.py --cmd \"set show_hidden=true\""
 # original: export PS1="[\u@\h \W]\$"  
 # simple:   export PS1="\e[1;36m[\u@\h \W]\$ \e[m " # blue, 0 - dark, 1 - light, 33 - yellow, 36 - blue \W for short path, \w for full path
 export PS1="\[\e[31m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e[m\] \[\e[38;5;214m\]\w\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "
